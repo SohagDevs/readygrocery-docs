@@ -50,15 +50,18 @@
       const topbar = document.querySelector(".topbar");
       return (topbar?.offsetHeight || 76) + 16;
     };
+    const anchorOffset = () => usesMainScroller() ? 36 : offsetTop();
 
     const scrollToId = (id, push = true) => {
       const target = document.getElementById(id);
       if (!target) return;
       if (usesMainScroller()) {
-        const y = target.getBoundingClientRect().top - mainContent.getBoundingClientRect().top + mainContent.scrollTop - 20;
+        const targetTop = target.getBoundingClientRect().top;
+        const scrollerTop = mainContent.getBoundingClientRect().top;
+        const y = targetTop - scrollerTop + mainContent.scrollTop - anchorOffset();
         mainContent.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       } else {
-        const y = target.getBoundingClientRect().top + window.pageYOffset - offsetTop();
+        const y = target.getBoundingClientRect().top + window.pageYOffset - anchorOffset();
         window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       }
       if (push) history.replaceState(null, "", `#${id}`);

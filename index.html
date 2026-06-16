@@ -45,19 +45,23 @@
     }
   </script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#docs-nav" data-bs-smooth-scroll="true" tabindex="0">
+<body tabindex="0">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+  <div class="grocery-orbit" aria-hidden="true">
+    <span class="grocery-float grocery-float-1"><i class="bi bi-basket2"></i></span>
+    <span class="grocery-float grocery-float-2"><i class="bi bi-cart4"></i></span>
+    <span class="grocery-float grocery-float-3"><i class="bi bi-bag-check"></i></span>
+    <span class="grocery-float grocery-float-4"><i class="bi bi-egg-fried"></i></span>
+    <span class="grocery-float grocery-float-5"><i class="bi bi-cup-straw"></i></span>
+    <span class="grocery-float grocery-float-6"><i class="bi bi-shop-window"></i></span>
+  </div>
 
   <header class="topbar sticky-top">
     <div class="container-xl px-3 px-lg-4 topbar-container">
       <div class="d-flex align-items-center justify-content-between gap-3 py-3">
         <a class="brand d-flex align-items-center text-decoration-none" href="#hero">
           <img src="assets/images/project-main-logo.svg" alt="ReadyGrocery logo" class="brand-logo">
-          <span class="brand-copy">
-            <span class="brand-title">ReadyGrocery</span>
-            <span class="brand-subtitle">Documentation Portal</span>
-          </span>
         </a>
 
         <div class="d-flex align-items-center gap-2 gap-lg-3">
@@ -65,12 +69,18 @@
             <i class="bi bi-search"></i>
             <input id="doc-search" class="form-control" type="search" placeholder="Search sections, setup steps, FAQ..." aria-label="Search documentation">
           </form>
-          <a class="btn btn-outline-light btn-sm d-none d-md-inline-flex" href="https://razinsoft.com/" target="_blank" rel="noopener">Company Site</a>
-          <a class="btn btn-warning btn-sm text-dark fw-semibold d-none d-sm-inline-flex" href="https://codecanyon.net/user/razinsoft/portfolio" target="_blank" rel="noopener">Buy on CodeCanyon</a>
+          <a class="topbar-action topbar-action-company d-none d-md-inline-flex" href="https://razinsoft.com/" target="_blank" rel="noopener">
+            <span class="topbar-action-icon"><img src="assets/images/razinsoft-favicon.png" alt="" aria-hidden="true"></span>
+            <span>Company Site</span>
+          </a>
+          <a class="topbar-action topbar-action-market d-none d-sm-inline-flex" href="https://codecanyon.net/user/razinsoft/portfolio" target="_blank" rel="noopener">
+            <span class="topbar-action-icon"><img src="assets/images/codecanyon-logo.svg" alt="" aria-hidden="true"></span>
+            <span>Buy on CodeCanyon</span>
+          </a>
           <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
-            <i class="bi bi-sun-fill theme-icon-light"></i>
+            <span class="theme-icon theme-icon-light"><i class="bi bi-brightness-high-fill"></i></span>
             <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
-            <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+            <span class="theme-icon theme-icon-dark"><i class="bi bi-moon-stars-fill"></i></span>
           </button>
           <button class="btn btn-outline-light btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Open documentation menu">
             <i class="bi bi-list"></i>
@@ -189,6 +199,7 @@
             <div class="row g-4 metrics-row">
               <div class="col-sm-6 col-xl-3">
                 <div class="metric-card">
+                  <span class="metric-icon"><i class="bi bi-layers"></i></span>
                   <span class="metric-label">Product Stack</span>
                   <strong>Laravel + Flutter</strong>
                   <p>Website and Admin Panel install together, with a companion mobile app.</p>
@@ -196,6 +207,7 @@
               </div>
               <div class="col-sm-6 col-xl-3">
                 <div class="metric-card">
+                  <span class="metric-icon"><i class="bi bi-diagram-3"></i></span>
                   <span class="metric-label">Documentation Scope</span>
                   <strong>End-to-End Setup</strong>
                   <p>From server requirements and `.env` setup to updates and troubleshooting.</p>
@@ -203,6 +215,7 @@
               </div>
               <div class="col-sm-6 col-xl-3">
                 <div class="metric-card">
+                  <span class="metric-icon"><i class="bi bi-patch-check"></i></span>
                   <span class="metric-label">Submission Ready</span>
                   <strong>CodeCanyon Friendly</strong>
                   <p>Structured headings, cleaner UX, and clearer technical guidance.</p>
@@ -210,6 +223,7 @@
               </div>
               <div class="col-sm-6 col-xl-3">
                 <div class="metric-card">
+                  <span class="metric-icon"><i class="bi bi-calendar2-check"></i></span>
                   <span class="metric-label">Last Refresh</span>
                   <strong>June 16, 2026</strong>
                   <p>Reorganized for clarity, consistency, and a more professional presentation.</p>
@@ -310,14 +324,21 @@
 
             <section id="requirements" class="doc-section searchable" data-search="requirements php laravel composer mysql flutter dart jdk android studio xcode node npm extensions">
               <div class="section-heading-wrap">
+                <span class="section-visual-icon"><i class="bi bi-hdd-network"></i></span>
                 <span class="section-kicker">Requirements</span>
                 <h2>System requirements</h2>
                 <p>Use the following baseline requirements before installation. Matching these versions or their compatible equivalents will reduce avoidable setup issues.</p>
               </div>
               <div class="row g-4">
                 <div class="col-xl-6">
-                  <div class="table-card">
-                    <div class="card-head"><h3>Web & Admin Requirements</h3><span class="soft-badge">Laravel stack</span></div>
+                  <div class="table-card requirement-table-card">
+                    <div class="card-head">
+                      <div class="card-title-cluster">
+                        <span class="card-head-icon"><i class="bi bi-window-sidebar"></i></span>
+                        <h3>Web & Admin Requirements</h3>
+                      </div>
+                      <span class="soft-badge">Laravel stack</span>
+                    </div>
                     <div class="table-responsive">
                       <table class="table align-middle mb-0">
                         <thead>
@@ -336,8 +357,14 @@
                   </div>
                 </div>
                 <div class="col-xl-6">
-                  <div class="table-card">
-                    <div class="card-head"><h3>Flutter App Requirements</h3><span class="soft-badge">Mobile stack</span></div>
+                  <div class="table-card requirement-table-card">
+                    <div class="card-head">
+                      <div class="card-title-cluster">
+                        <span class="card-head-icon"><i class="bi bi-phone"></i></span>
+                        <h3>Flutter App Requirements</h3>
+                      </div>
+                      <span class="soft-badge">Mobile stack</span>
+                    </div>
                     <div class="table-responsive">
                       <table class="table align-middle mb-0">
                         <thead>
@@ -472,18 +499,19 @@
 
             <section id="package-contents" class="doc-section searchable" data-search="package contents source code admin app documentation mobile flutter files download">
               <div class="section-heading-wrap">
+                <span class="section-visual-icon"><i class="bi bi-box-seam"></i></span>
                 <span class="section-kicker">Package</span>
                 <h2>Package contents</h2>
                 <p>After downloading the product from CodeCanyon, locate the web installer and mobile application source. The Website and Admin Panel are not separate web installations: both are deployed together from the same <code>install.zip</code> package.</p>
               </div>
-              <div class="bundle-banner mb-4">
+              <div class="bundle-banner package-spotlight mb-4">
                 <div class="bundle-icon"><i class="bi bi-file-earmark-zip-fill"></i></div>
-                <div>
+                <div class="package-spotlight-copy">
                   <span class="tiny-label">Single Web Installation Package</span>
                   <h3><code>install.zip</code> installs the Website and Admin Panel together</h3>
                   <p>Upload and install this archive once. The installer prepares the shared Laravel application, database, public Website, and protected Admin Panel in one guided process.</p>
                 </div>
-                <div class="bundle-result">
+                <div class="bundle-result package-flow">
                   <span><i class="bi bi-globe2"></i> Website</span>
                   <i class="bi bi-plus-lg"></i>
                   <span><i class="bi bi-speedometer2"></i> Admin Panel</span>
@@ -986,14 +1014,26 @@ firebase_messaging</code></pre>
 
             <section id="update-guide" class="doc-section searchable" data-search="update guide composer update browser update purchase verify zip upgrade now">
               <div class="section-heading-wrap">
+                <span class="section-visual-icon"><i class="bi bi-cloud-arrow-up"></i></span>
                 <span class="section-kicker">Updates</span>
                 <h2>Update guide</h2>
                 <p>Before updating a live site, create a full backup of project files and the production database. Always perform the update on a staging copy first when possible.</p>
               </div>
               <div class="row g-4">
                 <div class="col-xl-7">
-                  <div class="info-card">
-                    <h3>Recommended update workflow</h3>
+                  <div class="info-card update-workflow-card">
+                    <div class="update-workflow-head">
+                      <div>
+                        <span class="tiny-label">Safe release process</span>
+                        <h3>Recommended update workflow</h3>
+                      </div>
+                      <span class="update-status-pill"><i class="bi bi-shield-check"></i> Staging first</span>
+                    </div>
+                    <div class="update-quick-points">
+                      <span><i class="bi bi-database-check"></i> Backup</span>
+                      <span><i class="bi bi-cloud-upload"></i> Upload</span>
+                      <span><i class="bi bi-check2-circle"></i> Verify</span>
+                    </div>
                     <ol class="number-list">
                       <li>Back up files and database.</li>
                       <li>Upload the latest package or update archive to the server.</li>
@@ -1013,7 +1053,7 @@ firebase_messaging</code></pre>
                   </div>
                 </div>
                 <div class="col-xl-5">
-                  <figure class="media-card h-100">
+                  <figure class="media-card update-preview-card h-100">
                     <img src="assets/images/features/update-image/screen-02.jpg" class="img-fluid" alt="Update process screen example">
                     <figcaption>Example update screen from the original documentation flow.</figcaption>
                   </figure>
